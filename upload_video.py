@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python2
 
 import httplib
 import httplib2
@@ -42,7 +42,7 @@ RETRIABLE_STATUS_CODES = [500, 502, 503, 504]
 #   https://developers.google.com/youtube/v3/guides/authentication
 # For more information about the client_secrets.json file format, see:
 #   https://developers.google.com/api-client-library/python/guide/aaa_client_secrets
-CLIENT_SECRETS_FILE = "client_secrets.json"
+CLIENT_SECRETS_FILE = "C:\\Users\\bdt19\Documents_New\\Scripts\\YouTube Upload API\\client_secrets.json"
 
 # This OAuth 2.0 access scope allows an application to upload files to the
 # authenticated user's YouTube channel, but doesn't allow other types of access.
@@ -160,17 +160,21 @@ def resumable_upload(insert_request):
 if __name__ == '__main__':
   argparser.add_argument("--file", required=True, help="Video file to upload")
   argparser.add_argument("--title", help="Video title", default="Test Title")
+
+  # changed default video description to just be blank.
   argparser.add_argument("--description", help="Video description",
     default="")
+
   # changed default category to 20, gaming.
   argparser.add_argument("--category", default="20",
     help="Numeric video category. " +
       "See https://developers.google.com/youtube/v3/docs/videoCategories/list")
   argparser.add_argument("--keywords", help="Video keywords, comma separated",
     default="")
+  
+      # changed default from public to unlisted
   argparser.add_argument("--privacyStatus", choices=VALID_PRIVACY_STATUSES,
     default=VALID_PRIVACY_STATUSES[2], help="Video privacy status.") 
-    # changed default from public to unlisted
   args = argparser.parse_args()
 
   if not os.path.exists(args.file):
