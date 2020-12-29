@@ -1,5 +1,19 @@
 #!/usr/bin/python2
 
+# Code mainly from YouTube's Upload API example, found here: https://developers.google.com/youtube/v3/guides/uploading_a_video
+# with a few minor modifications, described in comments below, such as changing the default description to be blank
+# changing the default category to 20, gaming, and the default privacy setting to unlisted.
+# 
+# Currently this only works on Python 2. 
+#
+# TODO: Update to work with Python 3
+#
+# Code written initially by Google, and first modified by Ben Turner on 12-08-20.
+#
+# Unless otherwise stated or contradicted by original code, 
+# this code is licensed under the Apache 2.0 license, 
+# available here: https://www.apache.org/licenses/LICENSE-2.0
+
 import httplib
 import httplib2
 import os
