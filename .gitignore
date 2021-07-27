@@ -5,5 +5,4 @@ upload_all.ps1.txt
 *.zip
 *.pdf
 *.oxps
-*.txt
 upload_all.bat
