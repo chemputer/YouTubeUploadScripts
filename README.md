@@ -17,7 +17,7 @@ lets say there's a file called Big Fish.mp4, it'll upload that as "Big Fish Exam
 You will need to make a change to `upload_video.py`.
 
 Specifically, you'll need to create a file called client_secrets.json, following the instructions below, and set the variable CLIENT_SECRETS_FILE to the path where you store it.
-
+``` python
 # The CLIENT_SECRETS_FILE variable specifies the name of a file that contains
 # the OAuth 2.0 information for this application, including its client_id and
 # client_secret. You can acquire an OAuth 2.0 client ID and client secret from
@@ -25,9 +25,10 @@ Specifically, you'll need to create a file called client_secrets.json, following
 # https://console.developers.google.com/.
 # Please ensure that you have enabled the YouTube Data API for your project.
 # For more information about using OAuth2 to access the YouTube Data API, see:
-#   https://developers.google.com/youtube/v3/guides/authentication
+# https://developers.google.com/youtube/v3/guides/authentication
 # For more information about the client_secrets.json file format, see:
-#   https://developers.google.com/api-client-library/python/guide/aaa_client_secrets
+# https://developers.google.com/api-client-library/python/guide/aaa_client_secrets
 CLIENT_SECRETS_FILE = "C:\\Users\\bdt19\Documents_New\\Scripts\\YouTube Upload API\\client_secrets.json"
+```
 
 If you intend on using this for uploading many videos, you'll need to request for an API increase through Google, which will audit the program. There is a form involved you have to fill out, and it's a process. I applied for and recieved and increase of 30,000, as the default is 10,000 units. You can probably get more than that, but I was being conservative in my estimates. This is per day. I'm not sure exactly what a unit refers to, it doesn't seem to be a byte or a bit, but regardless, I found that my uploads (not huge videos, 20 minutes in length, 1080p at 20fps in H264 encoding) took approximately 1.6k units each. If you intend on doing this, I would go for a higher amount than I did, but not too high. 
