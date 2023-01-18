@@ -6,3 +6,5 @@ upload_all.ps1.txt
 *.pdf
 *.oxps
 upload_all.bat
+*.env
+.env
